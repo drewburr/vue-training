@@ -10,13 +10,18 @@
     <div id="app">
       <div>
         <label for="goal">Goal</label>
-        <input type="text" id="goal" />
-        <button>Add Goal</button>
+        <!-- v-model is Vue-specific and is added to link this element to 'enteredValue' in the 'data' object-->
+        <input type="text" id="goal" v-model="enteredValue" />
+        <!-- v-on:click triggers addGoal() to run when a click is executed-->
+        <button v-on:click="addGoal">Add Goal</button>
       </div>
       <ul>
-        <li>Test</li>
+        <!-- v-for is a loop, allowing us to create a list item for every goal in goals -->
+        <li v-for="goal in goals">{{ goal }}</li>
       </ul>
     </div>
+    <!-- Import Vue from CDN: https://vuejs.org/guide/quick-start.html#using-vue-from-cdn -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
