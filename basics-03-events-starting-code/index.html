@@ -19,8 +19,10 @@
     <section id="events">
       <h2>Events in Action</h2>
       <button v-on:click="add(1)">Add</button>
-      <button v-on:click.right="subtract(1)">Remove</button>
+      <button v-on:click.left="subtract(1)">Remove</button>
       <button v-on:click="clear()">Clear</button>
+      <!-- v-once will only update value on load. No other changes will be reflected -->
+      <p v-once>Starting value: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
       <input type="text" v-on:input="setName" v-on:keyup.enter="confirmInput">
       <p>Your name: {{ confirmedName }}</p>
