@@ -20,8 +20,6 @@ const app = Vue.createApp({
         },
         submitForm(event) {
             alert("Submitted!");
-            // Prevent the page from sending a HTTP request
-            event.preventDefault();
         },
     },
 });
