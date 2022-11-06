@@ -17,9 +17,13 @@ const app = Vue.createApp({
         },
         setName(event) {
             this.name = event.target.value;
-
+        },
+        submitForm(event) {
+            alert("Submitted!");
+            // Prevent the page from sending a HTTP request
+            event.preventDefault();
         },
     },
 });
 
-app.mount('#events');
+app.mount("#events");
